@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.SpringLayout;
 
+
 public class MilestoneCalculator extends JFrame {
     // Declare private variables for the Swing components
     private JLabel lblStudentName, lblStudentNo, lblQuiz1, lblQuiz2, lblQuiz3;
@@ -11,7 +12,7 @@ public class MilestoneCalculator extends JFrame {
 
     public MilestoneCalculator() {
         // Set up the frame
-        super("Grade Calculator");
+        super("Milestone Calculator");
         setSize(450, 250);
 
 
@@ -21,11 +22,11 @@ public class MilestoneCalculator extends JFrame {
         txtStudentName = new JTextField(30);
         lblStudentNo = new JLabel("Student No:");
         txtStudentNo = new JTextField(30);
-        lblQuiz1 = new JLabel("Quiz 1:");
+        lblQuiz1 = new JLabel("Milestone 1:");
         txtQuiz1 = new JTextField(10);
-        lblQuiz2 = new JLabel("Quiz 2:");
+        lblQuiz2 = new JLabel("Milestone 2:");
         txtQuiz2 = new JTextField(10);
-        lblQuiz3 = new JLabel("Quiz 3:");
+        lblQuiz3 = new JLabel("Terminal Asessment:");
         txtQuiz3 = new JTextField(10);
         calculateButton = new JButton("Calculate");
        
@@ -96,10 +97,26 @@ public class MilestoneCalculator extends JFrame {
                 stud.setQuiz1(Float.parseFloat(txtQuiz1.getText()));
                 stud.setQuiz2(Float.parseFloat(txtQuiz2.getText()));
                 stud.setQuiz3(Float.parseFloat(txtQuiz3.getText()));
-               
-                // Instantiate and call GradeOutput class
+
+               if (Float.parseFloat(txtQuiz1.getText()) <= 25 && Float.parseFloat(txtQuiz2.getText()) <= 40 
+                && Float.parseFloat(txtQuiz3.getText()) <= 35 ){
+                if (Float.parseFloat(txtQuiz1.getText()) != 0 && Float.parseFloat(txtQuiz2.getText()) != 0 
+                && Float.parseFloat(txtQuiz3.getText()) != 0) {
+                    // Instantiate and call GradeOutput class
                 MilestoneOutput output = new MilestoneOutput(stud);
                 output.setVisible(true);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Zero is invalid input!!!");
+                }
+                
+               }
+
+               else {
+                JOptionPane.showMessageDialog(null, "Milestone 1 max value is 25, Milestone 2 max value is 40 & Teminal Assessmen max value is 35");
+            }
+
+                
             }
         });
     }

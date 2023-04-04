@@ -11,7 +11,7 @@ public class MilestoneOutput extends JFrame {
 
     public MilestoneOutput(Student stud) {
         // Set up the frame
-        super("Grade Output");
+        super("Milestone Calculated Output");
         setSize(450, 250);
 
 
@@ -23,9 +23,9 @@ public class MilestoneOutput extends JFrame {
         // Create labels
         lblStudentName = new JLabel("Student Name:");
         lblStudentNo = new JLabel("Student No:");
-        lblQuiz1 = new JLabel("Quiz 1:");
-        lblQuiz2 = new JLabel("Quiz 2:");
-        lblQuiz3 = new JLabel("Quiz 3:");
+        lblQuiz1 = new JLabel("Milestone 1:");
+        lblQuiz2 = new JLabel("Milestone 2:");
+        lblQuiz3 = new JLabel("Terminal Assessment:");
         lblAveGrade = new JLabel("Average Grade:");
        
         // Create Student Name textfield

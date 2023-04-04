@@ -1,3 +1,4 @@
+
 public class Student {
     //attributes
     private String studentNumber;
@@ -56,7 +57,7 @@ public class Student {
    
     //methods
     public float computeAverage() {
-        averageGrade = (quiz1 + quiz2 + quiz3) / 3;
+        averageGrade = (quiz1 + quiz2 + quiz3);
         return averageGrade;
     }
 }
